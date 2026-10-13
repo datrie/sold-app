@@ -1,5 +1,5 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Sold! Privacy Policy</title><meta name="description" content="Sold! privacy policy: nothing leaves your phone."><style>
+<title>Sold! Privacy Policy</title><meta name="description" content="Sold! privacy policy: what stays on your phone, and what the optional instant alerts store."><style>
 :root{--ink:#1a1a1c;--muted:#6b6b72;--gold:#c2941f;--bg:#f7f6f3;--card:#fff}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,system-ui,sans-serif;line-height:1.6}
 .wrap{max-width:720px;margin:0 auto;padding:48px 20px 80px}
@@ -13,29 +13,39 @@ ul{padding-left:20px}footer{margin-top:60px;color:var(--muted);font-size:13px}
 </style></head><body><div class="wrap">
 <header><img src="icon.png" alt=""><a href="./">Sold!</a><nav><a href="privacy.html">Privacy</a><a href="support.html">Support</a></nav></header>
 <h1>Sold! Privacy Policy</h1>
-<p><strong>Effective date:</strong> September 15, 2026</p>
+<p><strong>Effective date:</strong> October 13, 2026</p>
 <p>Sold! (&quot;the app&quot;) is an iPhone app that shows Amazon KDP authors their own book sales. It is made by Datrie Allman (&quot;we&quot;, &quot;us&quot;).</p>
 <h2>The short version</h2>
-<p>Sold! does not collect, transmit, sell, or share your personal data. There is no Sold! server. Everything the app knows lives on your phone.</p>
-<h2>What the app stores on your device</h2>
+<p>By default, everything Sold! knows stays on your iPhone. If you turn on <strong>Instant alerts</strong> (an optional Sold! Pro feature), your Amazon session is stored, encrypted, on the Sold! alerts server so it can check your sales every few minutes and notify you with the app closed. Turning it off deletes that data. We never see your Amazon password, we have no analytics or advertising, and we never sell or share your data.</p>
+<h2>What the app stores on your iPhone</h2>
 <ul>
-<li><strong>Your Amazon session.</strong> When you sign in, you do so on Amazon&#x27;s own web page inside the app. Sold! never sees or stores your Amazon password. Amazon issues session cookies to the app, and those cookies are kept on your device so the app can read your sales reports. You can remove them at any time with Settings &gt; Disconnect, or by deleting the app.</li>
-<li><strong>Your sales figures.</strong> Sold! saves the numbers it reads from your KDP reports (orders, royalties, pages read, book titles and cover image links) on your device so it can show today&#x27;s totals, detect new sales, and fill the widget.</li>
-<li><strong>Your preferences.</strong> Notification toggles and similar settings.</li>
+<li><strong>Your Amazon session.</strong> You sign in on Amazon&#x27;s own web page inside the app. Sold! never sees or stores your Amazon password. Amazon issues session cookies, which are kept on your device so the app can read your sales reports. Remove them at any time with Settings &gt; Disconnect, or by deleting the app.</li>
+<li><strong>Your sales figures.</strong> The numbers the app reads from your KDP reports (orders, royalties, pages read, book titles and cover image links), so it can show your dashboard, detect new sales, and fill the widget.</li>
+<li><strong>Your preferences.</strong> Notification toggles, sounds, goals, and similar settings.</li>
 </ul>
-<h2>Where your data goes</h2>
+<h2>Instant alerts (optional, off by default)</h2>
+<p>Without instant alerts, iOS decides when Sold! may check for sales in the background, which can be hours apart. Instant alerts solve this with a small server. The app explains what is stored and asks before turning it on. When it is on, the Sold! alerts server stores:</p>
 <ul>
-<li><strong>To Amazon.</strong> The app talks directly to Amazon&#x27;s KDP Reports website (kdpreports.amazon.com) using your session, the same way your browser does when you open the dashboard. Amazon&#x27;s handling of that traffic is governed by Amazon&#x27;s privacy notice.</li>
-<li><strong>Nowhere else.</strong> Sold! has no analytics, no crash reporting, no advertising, and no backend of its own. We cannot see your sales, your books, or that you use the app.</li>
+<li><strong>Your Amazon session cookies</strong> for kdpreports.amazon.com, encrypted at rest (AES-256-GCM). They are used only to read your own KDP sales reports every 5 minutes. The server keeps them current when Amazon refreshes them.</li>
+<li><strong>Your device&#x27;s push token</strong>, an address issued by Apple so the server can send notifications to your iPhone.</li>
+<li><strong>What the alerts need:</strong> your book titles, today&#x27;s sale and page-read counts per book and per Amazon store (to spot new ones), an average royalty per order (for the &quot;est.&quot; figure), your currency, and your alert settings (which alerts, which sound, muted books).</li>
+<li><strong>Health information:</strong> when it last checked and whether that check worked, so the app can show you that alerts are live.</li>
 </ul>
-<h2>Notifications</h2>
-<p>Sale alerts are generated locally on your device. No push notification service or third party is involved.</p>
+<p>The server is hosted on Cloudflare Workers. Notifications are delivered by Apple Push Notification service, which receives only the notification itself (for example, the book title and estimated royalty) and your device&#x27;s push token. The server does not log your session or your sales.</p>
+<p><strong>Deletion.</strong> Everything the server holds about you is deleted when you turn instant alerts off, when you disconnect your Amazon account in the app, when the app sees that your Sold! Pro subscription has ended, when Apple reports the app is no longer installed, or automatically 30 days after alerts stop working (for example, if Amazon ends your session and you don&#x27;t reconnect).</p>
+<h2>Where else your data goes</h2>
+<ul>
+<li><strong>To Amazon.</strong> The app (and, with instant alerts, the server) talks to Amazon&#x27;s KDP Reports website (kdpreports.amazon.com) using your session, the same way your browser does when you open the dashboard. To spot new ratings, the app also opens your books&#x27; public Amazon product pages, without your session. Amazon&#x27;s handling of that traffic is governed by Amazon&#x27;s privacy notice.</li>
+<li><strong>Nowhere else.</strong> Sold! has no analytics, no crash reporting, no advertising, and no account system. We do not sell, rent, or share your data, and we do not use it for anything except your alerts.</li>
+</ul>
+<h2>Purchases</h2>
+<p>Sold! Pro subscriptions are handled entirely by Apple. We do not receive your payment details.</p>
 <h2>Children</h2>
 <p>Sold! is intended for adults who publish books and is not directed at children under 13.</p>
 <h2>Changes</h2>
-<p>If a future version adds any data collection (for example crash reporting), this policy will be updated before that version ships and the app&#x27;s App Store privacy details will be updated to match.</p>
+<p>If we change what Sold! collects, this policy will be updated before that version ships, and the app&#x27;s App Store privacy details will be updated to match.</p>
 <h2>Contact</h2>
-<p>Questions about privacy: datrieallman@gmail.com</p>
+<p>Questions, or a request to delete your data: datrieallman@gmail.com</p>
 <p>Sold! is not affiliated with or endorsed by Amazon. Amazon, Kindle, and KDP are trademarks of Amazon.com, Inc.</p>
 <footer>© 2026 Datrie Allman. Sold! is not affiliated with or endorsed by Amazon. Amazon, Kindle, and KDP are trademarks of Amazon.com, Inc. or its affiliates.</footer>
 </div></body></html>
